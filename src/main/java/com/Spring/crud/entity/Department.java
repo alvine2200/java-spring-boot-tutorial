@@ -1,10 +1,19 @@
 package com.Spring.crud.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 /**
  * Department
  */
+@Entity
 public class Department {
 
+    //primary key
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
     private String departmentName;
     private String departmentCode;
