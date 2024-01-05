@@ -3,6 +3,7 @@ package com.Spring.crud.controller;
 import java.util.List;
 import java.util.logging.Logger;
 
+import com.Spring.crud.error.DepartmentNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -38,7 +39,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId)
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException
     {
         return departmentService.fetchDepartmentById(departmentId);
     }
