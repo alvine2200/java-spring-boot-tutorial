@@ -1,7 +1,9 @@
 package com.Spring.crud.controller;
 
 import java.util.List;
+import java.util.logging.Logger;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +24,10 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
+    private static final Logger logger=Logger.getLogger(DepartmentController.class.getName());
     @PostMapping("/departments")
-    public Department saveDepartment(@RequestBody Department department){
+    public Department saveDepartment(@Valid @RequestBody Department department){
+        logger.info("In the saveDepartmentMethod of the DepartmentController");
         return departmentService.saveDepartment(department);
     }
 
@@ -57,4 +61,6 @@ public class DepartmentController {
     {
         return departmentService.getDepartmentByName(departmentName);
     }
+
+
 }
