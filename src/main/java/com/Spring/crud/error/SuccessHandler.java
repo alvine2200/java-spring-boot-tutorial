@@ -1,6 +1,6 @@
 package com.Spring.crud.error;
 
-public class SuccessHandler extends RuntimeException{
+public class SuccessHandler extends Exception{
     public SuccessHandler() {
         super();
     }

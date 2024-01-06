@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import com.Spring.crud.error.DepartmentNotFoundException;
+import com.Spring.crud.error.SuccessHandler;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -58,7 +59,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/name/{name}")
-    public Department getDepartmentByFirstName(@PathVariable("name") String departmentName)
+    public Department getDepartmentByFirstName (@PathVariable("name") String departmentName) throws SuccessHandler
     {
         return departmentService.getDepartmentByName(departmentName);
     }

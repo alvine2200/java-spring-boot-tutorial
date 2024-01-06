@@ -8,10 +8,7 @@ import org.springframework.http.HttpStatus;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Success {
-
     private HttpStatus status;
     private String message;
-    private Object data;
 }
